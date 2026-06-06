@@ -2107,7 +2107,7 @@ function drawCardSum(root,q){
     ${renderKeypad()}
   `;
   speakWithHighlight('두 수를 모아요',document.getElementById('instr-text'));
-  setupKeypadCheck(ans,()=>motionMergeCards(root,q.a,q.b));
+  setupKeypadCheck(ans,async ()=>{await motionMergeCards(root,q.a,q.b);await motionBananaJump(root,q.a,q.b,ans);});
 }
 
 // 분지 트리 — 여러 가지 모으기/가르기
